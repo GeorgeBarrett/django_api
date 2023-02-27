@@ -1,10 +1,10 @@
 from django.http import JsonResponse
 from .models import Planet
-from .serialisers import PlanetSerialiser
+from .serializers import PlanetSerializer
 
 def planet_list(request):
 
     planets = Planet.objects.all()
-    serialiser = PlanetSerialiser(planet_list, many=True)
+    serializer = PlanetSerializer(planet_list, many=True)
     
-    return JsonResponse(serialiser.data, safe=False)
+    return JsonResponse(serializer.data, safe=False)
