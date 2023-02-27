@@ -23,10 +23,16 @@ def planet_list(request):
         
 
 @api_view(['GET', 'PUT', 'DELETE'])
-def planet_detail(request):
+def planet_detail(request, id):
+
+    try:
+        planet = Planet.objects.get(pk=id)
+    except Planet.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
-        pass
+        serializer = PlanetSerializer(planet)
+        return Response(serializer.data)
 
     elif request.method == 'PUT':
         pass
