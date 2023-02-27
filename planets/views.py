@@ -5,6 +5,6 @@ from .serializers import PlanetSerializer
 def planet_list(request):
 
     planets = Planet.objects.all()
-    serializer = PlanetSerializer(planet_list, many=True)
+    serializer = PlanetSerializer(planets, many=True)
     
-    return JsonResponse(serializer.data, safe=False)
+    return JsonResponse({"planets": serializer.data}, safe=False)
