@@ -19,5 +19,6 @@ from planets import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('planets/', views.planet_list)
+    path('planets/', views.planet_list),
+    path('planets/<int:id>', views.drink_detail)
 ]
