@@ -7,4 +7,4 @@ def planet_list(request):
     planets = Planet.objects.all()
     serializer = PlanetSerializer(planets, many=True)
     
-    return JsonResponse({"planets": serializer.data}, safe=False)
+    return JsonResponse({"planets": serializer.data})
