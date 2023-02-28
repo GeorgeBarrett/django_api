@@ -16,9 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from planets import views
+from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('planets/', views.planet_list),
     path('planets/<int:id>', views.planet_detail)
 ]
+
+urlpatterns = format_suffix_patterns(urlpatterns)
