@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from rest_framework import status
 
 @api_view(['GET', 'POST'])
-def planet_list(request):
+def planet_list(request, format=None):
 
     if request.method == 'GET':
         planets = Planet.objects.all()
@@ -23,7 +23,7 @@ def planet_list(request):
         
 
 @api_view(['GET', 'PUT', 'DELETE'])
-def planet_detail(request, id):
+def planet_detail(request, id, format=None):
 
     try:
         planet = Planet.objects.get(pk=id)
