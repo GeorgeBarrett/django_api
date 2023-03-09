@@ -14,3 +14,7 @@ python manage.py file used to wrap django admin
 ## development tools
 
 I added elements through api to the database using postman 
+
+## git 
+
+i utilised a solid foundation in git throughout the project
